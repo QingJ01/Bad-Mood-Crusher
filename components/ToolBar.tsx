@@ -47,16 +47,16 @@ const tools = [
 export const ToolBar: React.FC<ToolBarProps> = ({ onSelect, disabled, hasText }) => {
   return (
     <div className="flex flex-col items-center gap-6 mt-10 w-full max-w-2xl px-4">
-       {!disabled && (
-        <motion.p 
-          initial={{ opacity: 0 }} 
+      {!disabled && (
+        <motion.p
+          initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="text-soft-text font-cute text-lg mb-2 h-6 flex items-center gap-2"
         >
-           {hasText ? "👇 选择一种方式消灭它：" : " "}
+          {hasText ? "👇 选择一种方式消灭它：" : " "}
         </motion.p>
       )}
-      
+
       <div className="flex justify-center gap-4 md:gap-8 flex-wrap">
         {tools.map((tool) => (
           <motion.button
@@ -77,14 +77,14 @@ export const ToolBar: React.FC<ToolBarProps> = ({ onSelect, disabled, hasText })
             aria-label={tool.label}
           >
             <tool.icon size={32} strokeWidth={2.5} className="mb-2" />
-            <span className="text-xs md:text-sm font-bold font-cute">{tool.label}</span>
-            
+            <span className="hidden md:block text-xs md:text-sm font-bold font-cute">{tool.label}</span>
+
             {/* Tooltip Bubble */}
             {!disabled && hasText && (
-               <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-white text-soft-text text-xs py-2 px-3 rounded-xl shadow-md opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap pointer-events-none border border-gray-100">
-                 {tool.desc}
-                 <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white rotate-45 border-r border-b border-gray-100"></div>
-               </div>
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-white text-soft-text text-xs py-2 px-3 rounded-xl shadow-md opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap pointer-events-none border border-gray-100">
+                {tool.desc}
+                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white rotate-45 border-r border-b border-gray-100"></div>
+              </div>
             )}
           </motion.button>
         ))}
