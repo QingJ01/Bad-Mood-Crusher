@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>坏情绪粉碎机</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Noto Sans SC"', 'sans-serif'],
+              hand: ['"ZCOOL KuaiLe"', 'cursive'],
+            },
+            colors: {
+              'cream': '#FFFDF5',
+              'pastel-yellow': '#FEF9C3', // softer yellow
+              'pastel-pink': '#FCE7F3',
+              'pastel-blue': '#E0F2FE',
+              'pastel-green': '#DCFCE7',
+              'soft-text': '#57534E',
+              'accent': '#F472B6',
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'breathe': 'breathe 4s ease-in-out infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              breathe: {
+                 '0%, 100%': { transform: 'scale(1)' },
+                 '50%': { transform: 'scale(1.05)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #FFFDF5;
+        overscroll-behavior: none;
+      }
+      /* Custom scrollbar for the textarea */
+      textarea::-webkit-scrollbar {
+        width: 6px;
+      }
+      textarea::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+      textarea::-webkit-scrollbar-thumb {
+        background: #E5E7EB; 
+        border-radius: 10px;
+      }
+      textarea::-webkit-scrollbar-thumb:hover {
+        background: #D1D5DB; 
+      }
+      .font-cute {
+        font-family: 'ZCOOL KuaiLe', cursive;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.25",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
