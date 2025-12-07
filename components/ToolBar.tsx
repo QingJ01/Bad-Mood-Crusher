@@ -57,7 +57,7 @@ export const ToolBar: React.FC<ToolBarProps> = ({ onSelect, disabled, hasText })
         </motion.p>
       )}
 
-      <div className="flex justify-center gap-4 md:gap-8 flex-wrap">
+      <div className="flex justify-center gap-6 md:gap-8 flex-wrap">
         {tools.map((tool) => (
           <motion.button
             key={tool.id}
@@ -70,7 +70,7 @@ export const ToolBar: React.FC<ToolBarProps> = ({ onSelect, disabled, hasText })
             whileTap={!disabled && hasText ? { scale: 0.9 } : {}}
             className={`
               relative group flex flex-col items-center justify-center
-              w-18 h-18 md:w-24 md:h-24 rounded-3xl transition-all duration-300
+              w-20 h-20 md:w-24 md:h-24 rounded-3xl transition-all duration-300
               ${tool.color}
               ${(!hasText || disabled) ? 'opacity-40 cursor-not-allowed scale-95' : 'shadow-lg cursor-pointer hover:shadow-xl'}
             `}
