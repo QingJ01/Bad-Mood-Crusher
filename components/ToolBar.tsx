@@ -76,7 +76,7 @@ export const ToolBar: React.FC<ToolBarProps> = ({ onSelect, disabled, hasText })
             `}
             aria-label={tool.label}
           >
-            <tool.icon size={32} strokeWidth={2.5} className="mb-2" />
+            <tool.icon size={32} strokeWidth={2.5} className="md:mb-2" />
             <span className="hidden md:block text-xs md:text-sm font-bold font-cute">{tool.label}</span>
 
             {/* Tooltip Bubble */}
